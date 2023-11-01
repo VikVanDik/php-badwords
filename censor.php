@@ -3,6 +3,8 @@
 $badword = $_POST ['badword'];
 $text = $_POST ['text'];
 
+$censored_text = str_replace($badword, '***', $text);
+
 var_dump($badword);
 
 ?>
@@ -30,8 +32,8 @@ var_dump($badword);
         </div>
         <div class="col-6">
             <h3>Paragrafo censurato</h3>
-            <p><?php echo($text) ?></p>
-            <h3>Lunghezza paragrafo: <?php echo(strlen($text)) ?> caratteri</h3>
+            <p><?php echo($censored_text) ?></p>
+            <h3>Lunghezza paragrafo: <?php echo(strlen($censored_text)) ?> caratteri</h3>
         </div>
     </div>
 </div>
